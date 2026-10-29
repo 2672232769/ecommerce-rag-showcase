@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* 全局基础样式 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Markdown 渲染样式 */
+.markdown-body h1 { @apply text-xl font-bold mb-2 mt-4; }
+.markdown-body h2 { @apply text-lg font-bold mb-2 mt-3; }
+.markdown-body h3 { @apply text-base font-semibold mb-1 mt-2; }
+.markdown-body p { @apply mb-2 leading-relaxed; }
+.markdown-body ul { @apply list-disc list-inside mb-2; }
+.markdown-body ol { @apply list-decimal list-inside mb-2; }
+.markdown-body li { @apply mb-1; }
+.markdown-body code { @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm text-pink-600; }
+.markdown-body pre { @apply bg-gray-900 text-gray-100 p-3 rounded-lg mb-2 overflow-x-auto; }
+.markdown-body pre code { @apply bg-transparent text-gray-100 p-0; }
+.markdown-body strong { @apply font-bold; }
+.markdown-body table { @apply w-full border-collapse mb-2; }
+.markdown-body th { @apply bg-gray-100 border border-gray-300 px-3 py-2 text-left font-semibold; }
+.markdown-body td { @apply border border-gray-300 px-3 py-2; }
+.markdown-body blockquote { @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 mb-2; }

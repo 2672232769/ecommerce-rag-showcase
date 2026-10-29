@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# 数据库和运行时数据
+backend/data/
+*.db
+*.sqlite3
+
+# 环境配置（包含 API Key，不能提交）
+backend/.env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+restored-preview/
+bge-m3-onnx-int8.zip
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+frontend/dist/
+
+# 日志
+*.log
+backend/data/logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 测试报告
+test_report.json
+test_report.md
+
+# 本地部署缓存与构建元数据
+.cache/
+.runtime/
+*.tsbuildinfo
+!frontend/package-lock.json
+!backend/requirements-lock.txt
+frontend/vite.config.js
+frontend/vite.config.d.ts
+models/

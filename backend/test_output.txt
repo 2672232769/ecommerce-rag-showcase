@@ -1,0 +1,121 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.9, pytest-8.4.2, pluggy-1.5.0 -- D:\software\anaconda\anaconda_1\python.exe
+cachedir: .pytest_cache
+rootdir: d:\itcast\vibeCoding\vibeCoding_HeiMa\LangChainRAG_project
+plugins: anyio-4.10.0, langsmith-0.10.4, timeout-2.4.0
+collecting ... collected 28 items
+
+backend/tests/test_auth.py::TestHashPassword::test_hash_returns_string PASSED [  3%]
+backend/tests/test_auth.py::TestHashPassword::test_hash_starts_with_bcrypt_prefix PASSED [  7%]
+backend/tests/test_auth.py::TestHashPassword::test_different_inputs_produce_different_hashes PASSED [ 10%]
+backend/tests/test_auth.py::TestHashPassword::test_same_input_produces_different_hashes_due_to_salt PASSED [ 14%]
+backend/tests/test_auth.py::TestHashPassword::test_empty_password PASSED [ 17%]
+backend/tests/test_auth.py::TestVerifyPassword::test_verify_correct_password PASSED [ 21%]
+backend/tests/test_auth.py::TestVerifyPassword::test_verify_wrong_password PASSED [ 25%]
+backend/tests/test_auth.py::TestVerifyPassword::test_verify_case_sensitive PASSED [ 28%]
+backend/tests/test_auth.py::TestVerifyPassword::test_verify_with_special_chars PASSED [ 32%]
+backend/tests/test_auth.py::TestCreateAccessToken::test_returns_string_token PASSED [ 35%]
+backend/tests/test_auth.py::TestCreateAccessToken::test_token_contains_three_parts PASSED [ 39%]
+backend/tests/test_auth.py::TestCreateAccessToken::test_different_data_produces_different_tokens PASSED [ 42%]
+backend/tests/test_auth.py::TestCreateAccessToken::test_custom_expiration PASSED [ 46%]
+backend/tests/test_auth.py::TestCreateAccessToken::test_default_expiration_uses_config FAILED [ 50%]
+backend/tests/test_schemas.py::TestUserRegister::test_valid_register PASSED [ 53%]
+backend/tests/test_schemas.py::TestUserRegister::test_username_too_short PASSED [ 57%]
+backend/tests/test_schemas.py::TestUserRegister::test_password_too_short PASSED [ 60%]
+backend/tests/test_schemas.py::TestUserRegister::test_username_max_length PASSED [ 64%]
+backend/tests/test_schemas.py::TestUserLogin::test_valid_login PASSED    [ 67%]
+backend/tests/test_schemas.py::TestUserLogin::test_missing_fields_raises_error PASSED [ 71%]
+backend/tests/test_schemas.py::TestChangePasswordRequest::test_valid_request PASSED [ 75%]
+backend/tests/test_schemas.py::TestChangePasswordRequest::test_new_password_too_short PASSED [ 78%]
+backend/tests/test_schemas.py::TestChatRequest::test_valid_request PASSED [ 82%]
+backend/tests/test_schemas.py::TestChatRequest::test_empty_question PASSED [ 85%]
+backend/tests/test_schemas.py::TestChatRequest::test_question_max_length PASSED [ 89%]
+backend/tests/test_schemas.py::TestChatRequest::test_question_too_long PASSED [ 92%]
+backend/tests/test_schemas.py::TestSessionCreate::test_default_title PASSED [ 96%]
+backend/tests/test_schemas.py::TestSessionCreate::test_custom_title PASSED [100%]
+
+================================== FAILURES ===================================
+__________ TestCreateAccessToken.test_default_expiration_uses_config __________
+
+self = <tests.test_auth.TestCreateAccessToken object at 0x000001782C65FBF0>
+
+    def test_default_expiration_uses_config(self):
+        """默认过期时间使用配置值"""
+        token = create_access_token(data={"sub": 1})
+        from jose import jwt
+>       payload = jwt.decode(
+            token, settings.jwt_secret, algorithms=["HS256"]
+        )
+
+backend\tests\test_auth.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+D:\software\anaconda\anaconda_1\Lib\site-packages\jose\jwt.py:174: in decode
+    _validate_claims(
+D:\software\anaconda\anaconda_1\Lib\site-packages\jose\jwt.py:506: in _validate_claims
+    _validate_sub(claims, subject=subject)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+claims = {'exp': 1784197569, 'sub': 1}, subject = None
+
+    def _validate_sub(claims, subject=None):
+        """Validates that the 'sub' claim is valid.
+    
+        The "sub" (subject) claim identifies the principal that is the
+        subject of the JWT.  The claims in a JWT are normally statements
+        about the subject.  The subject value MUST either be scoped to be
+        locally unique in the context of the issuer or be globally unique.
+        The processing of this claim is generally application specific.  The
+        "sub" value is a case-sensitive string containing a StringOrURI
+        value.  Use of this claim is OPTIONAL.
+    
+        Arg
+            claims (dict): The claims dictionary to validate.
+            subject (str): The subject of the token.
+        """
+    
+        if "sub" not in claims:
+            return
+    
+        if not isinstance(claims["sub"], str):
+>           raise JWTClaimsError("Subject must be a string.")
+E           jose.exceptions.JWTClaimsError: Subject must be a string.
+
+D:\software\anaconda\anaconda_1\Lib\site-packages\jose\jwt.py:411: JWTClaimsError
+============================== warnings summary ===============================
+backend\app\config.py:8
+  d:\itcast\vibeCoding\vibeCoding_HeiMa\LangChainRAG_project\backend\tests\..\app\config.py:8: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class Settings(BaseSettings):
+
+backend\app\schemas.py:22
+  d:\itcast\vibeCoding\vibeCoding_HeiMa\LangChainRAG_project\backend\tests\..\app\schemas.py:22: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class UserResponse(BaseModel):
+
+backend\app\schemas.py:53
+  d:\itcast\vibeCoding\vibeCoding_HeiMa\LangChainRAG_project\backend\tests\..\app\schemas.py:53: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class SessionResponse(BaseModel):
+
+backend\app\schemas.py:63
+  d:\itcast\vibeCoding\vibeCoding_HeiMa\LangChainRAG_project\backend\tests\..\app\schemas.py:63: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class MessageResponse(BaseModel):
+
+backend\app\schemas.py:75
+  d:\itcast\vibeCoding\vibeCoding_HeiMa\LangChainRAG_project\backend\tests\..\app\schemas.py:75: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class SessionDetailResponse(BaseModel):
+
+backend\app\schemas.py:95
+  d:\itcast\vibeCoding\vibeCoding_HeiMa\LangChainRAG_project\backend\tests\..\app\schemas.py:95: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class KnowledgeDocResponse(BaseModel):
+
+backend/tests/test_auth.py::TestCreateAccessToken::test_returns_string_token
+backend/tests/test_auth.py::TestCreateAccessToken::test_token_contains_three_parts
+backend/tests/test_auth.py::TestCreateAccessToken::test_different_data_produces_different_tokens
+backend/tests/test_auth.py::TestCreateAccessToken::test_different_data_produces_different_tokens
+backend/tests/test_auth.py::TestCreateAccessToken::test_custom_expiration
+backend/tests/test_auth.py::TestCreateAccessToken::test_default_expiration_uses_config
+  d:\itcast\vibeCoding\vibeCoding_HeiMa\LangChainRAG_project\backend\tests\..\app\auth.py:33: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    expire = datetime.utcnow() + (
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED backend/tests/test_auth.py::TestCreateAccessToken::test_default_expiration_uses_config
+================== 1 failed, 27 passed, 12 warnings in 5.76s ==================

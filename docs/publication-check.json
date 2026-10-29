@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-29",
+  "project": "ecommerce-rag-showcase",
+  "tests": "36 passed",
+  "test_model": "isolated test doubles",
+  "frontend_build": "passed",
+  "snapshot_files_byte_identical": 5,
+  "restored_counts": {
+    "users": 1,
+    "chat_sessions": 3,
+    "chat_messages": 16,
+    "knowledge_documents": 1
+  },
+  "conversation_document_rows_equal_original": {
+    "chat_sessions": true,
+    "chat_messages": true,
+    "knowledge_documents": true
+  },
+  "sqlite_integrity": "ok",
+  "chroma_vectors": 2,
+  "vector_dimension": 1024,
+  "restored_admin_password_verified": true,
+  "original_password_hashes_excluded": true,
+  "live_model_call_performed": false,
+  "browser_click_e2e_performed": false,
+  "original_tracked_files_unchanged": true,
+  "credential_scan": "passed"
+}

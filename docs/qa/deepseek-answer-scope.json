@@ -1,0 +1,16 @@
+[
+  {
+    "session_id": 3,
+    "question": "海风 T500 保温杯能放进微波炉吗？",
+    "answer": "根据知识库信息，**海风 T500 保温杯禁止使用微波炉加热**。",
+    "passed": true,
+    "uses_test_doubles": false
+  },
+  {
+    "session_id": 3,
+    "question": "星河 K87 有几个颜色？",
+    "answer": "知识库中未提供星河 K87 机械键盘的颜色信息，建议您联系人工客服进一步确认。",
+    "passed": true,
+    "uses_test_doubles": false
+  }
+]

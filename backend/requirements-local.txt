@@ -1,0 +1,10 @@
+-r requirements.txt
+# passlib 1.7.4 与新版 bcrypt 的兼容限制
+bcrypt==4.0.1
+# Chroma 0.5.23 使用旧 capture 调用签名。
+posthog==3.7.0
+pytest==9.1.1
+# Local BGE-M3 adapter uses these existing Chroma dependencies directly.
+onnxruntime==1.29.0
+tokenizers==0.20.3
+numpy==2.5.3

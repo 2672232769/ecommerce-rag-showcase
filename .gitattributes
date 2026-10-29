@@ -1,0 +1,3 @@
+# Preserve snapshot bytes: manifest SHA-256 values must survive clone on any OS.
+snapshots/** -text whitespace=cr-at-eol
+*.zip binary

@@ -1,0 +1,9 @@
+{
+  "model": "onnx-community/bge-m3-ONNX",
+  "revision": "25b9af8e87a38eb120cfe87125383677b9cd309e",
+  "model_card_license": "mit",
+  "base_model": "BAAI/bge-m3",
+  "base_card_license": "mit",
+  "reference_license_url": "https://github.com/FlagOpen/FlagEmbedding/blob/master/LICENSE",
+  "reference_license_sha": "360931513aa6c02f933a403202afa99ac2c5bc88"
+}

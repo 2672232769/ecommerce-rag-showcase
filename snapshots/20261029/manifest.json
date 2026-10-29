@@ -1,0 +1,90 @@
+{
+  "format_version": 1,
+  "exported_at": "2026-10-29T12:32:45.457786+08:00",
+  "counts": {
+    "users": 1,
+    "chat_sessions": 3,
+    "chat_messages": 16,
+    "knowledge_documents": 1
+  },
+  "passwords": "Original hashes replaced with random unusable credentials; restore resets only the configured admin.",
+  "excluded": [
+    "backend/.env",
+    "runtime logs",
+    "dependency caches",
+    "original password hashes",
+    "Codex chat history"
+  ],
+  "artifacts": [
+    {
+      "path": "data.zip",
+      "sha256": "b978c9d01a8e3d76f656dbebb52eea43daab706c195be82185618e63998211a4",
+      "files": [
+        {
+          "path": "app.db",
+          "size": 65536,
+          "sha256": "fbc54db3c7ddea6099405a5b57b748c265c96fbcbc30f31f61a8937d27f78ee7"
+        },
+        {
+          "path": "chroma/cda2ab2d-ef9c-44ae-bab8-b489fd9ef386/data_level0.bin",
+          "size": 4236000,
+          "sha256": "95042e844cfb77b20e578cf65635282a99d7c4dd20e589ac062f38bc389f8e58"
+        },
+        {
+          "path": "chroma/cda2ab2d-ef9c-44ae-bab8-b489fd9ef386/header.bin",
+          "size": 100,
+          "sha256": "fcc596bc1909f7cc610d5839236c90513b4fbad06776c253fa1b21bfd712e940"
+        },
+        {
+          "path": "chroma/cda2ab2d-ef9c-44ae-bab8-b489fd9ef386/length.bin",
+          "size": 4000,
+          "sha256": "e23d1f84f5ef811bcac937b49879444d5ee93e93bab9453300591ab52089fd99"
+        },
+        {
+          "path": "chroma/cda2ab2d-ef9c-44ae-bab8-b489fd9ef386/link_lists.bin",
+          "size": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "chroma/chroma.sqlite3",
+          "size": 184320,
+          "sha256": "3595032c174f0ee7d5dd8ed356903ee25f4a870859859ea08d9641b27eff8367"
+        },
+        {
+          "path": "uploads/1/demo_products.md",
+          "size": 1290,
+          "sha256": "193ac210ed056d6339cdaa94733afcce3fae1710bd817a6571639cf2963e2ba7"
+        }
+      ]
+    },
+    {
+      "path": "frontend-dist.zip",
+      "sha256": "206230dd9870754689995a85a3d258e6a9b89dcece4a6f0f6929d35af579ad98",
+      "files": [
+        {
+          "path": "assets/index-B-Cd9shg.css",
+          "size": 22243,
+          "sha256": "d2e3b56bfda70947b30578793a6d5d0e13f2b1e1dde3f7187c518b5effaaa08a"
+        },
+        {
+          "path": "assets/index-BrBSjDrL.js",
+          "size": 411309,
+          "sha256": "39c548f979a657d04a3b4cfd3ee820842cd02e6ee234954df889d2ac9f42e8ff"
+        },
+        {
+          "path": "index.html",
+          "size": 625,
+          "sha256": "809f60b96b5630ed8b30422ddb8d1e5fa3d89f207b1d189aee2e8c4d5fe6a126"
+        }
+      ]
+    },
+    {
+      "path": "conversations.json",
+      "sha256": "82ff2cbf9ffbc59d767d94d4add1b54dcb2a72d91e4cfc2d72e2476d32186aa2"
+    },
+    {
+      "path": "conversations.md",
+      "sha256": "c0c1340b080c1dc93219a6f5aa2c7d984ccf44ae9174002b6a0532e5aa6cfc04"
+    }
+  ]
+}

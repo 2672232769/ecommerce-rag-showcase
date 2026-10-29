@@ -1,0 +1,73 @@
+{
+  "duration": 0.08,
+  "units": [
+    {
+      "id": 1, "priority": "P0", "file": "app/auth.py", "unit_name": "hash_password", "line": 23, "type": "function",
+      "tests": [
+        {"name": "test_hash_returns_string", "status": "passed", "duration": 0.01},
+        {"name": "test_hash_starts_with_bcrypt_prefix", "status": "passed", "duration": 0.01},
+        {"name": "test_different_inputs_produce_different_hashes", "status": "passed", "duration": 0.01},
+        {"name": "test_same_input_produces_different_hashes_due_to_salt", "status": "passed", "duration": 0.01},
+        {"name": "test_empty_password", "status": "passed", "duration": 0.01}
+      ]
+    },
+    {
+      "id": 2, "priority": "P0", "file": "app/auth.py", "unit_name": "verify_password", "line": 27, "type": "function",
+      "tests": [
+        {"name": "test_verify_correct_password", "status": "passed", "duration": 0.01},
+        {"name": "test_verify_wrong_password", "status": "passed", "duration": 0.01},
+        {"name": "test_verify_case_sensitive", "status": "passed", "duration": 0.01},
+        {"name": "test_verify_with_special_chars", "status": "passed", "duration": 0.01}
+      ]
+    },
+    {
+      "id": 3, "priority": "P0", "file": "app/auth.py", "unit_name": "create_access_token", "line": 31, "type": "function",
+      "tests": [
+        {"name": "test_returns_string_token", "status": "passed", "duration": 0.01},
+        {"name": "test_token_contains_three_parts", "status": "passed", "duration": 0.01},
+        {"name": "test_different_data_produces_different_tokens", "status": "passed", "duration": 0.01},
+        {"name": "test_custom_expiration", "status": "passed", "duration": 0.01},
+        {"name": "test_default_expiration_uses_config", "status": "passed", "duration": 0.02}
+      ]
+    },
+    {
+      "id": 4, "priority": "P1", "file": "app/schemas.py", "unit_name": "UserRegister", "line": 14, "type": "class",
+      "tests": [
+        {"name": "test_valid_register", "status": "passed", "duration": 0.01},
+        {"name": "test_username_too_short", "status": "passed", "duration": 0.01},
+        {"name": "test_password_too_short", "status": "passed", "duration": 0.01},
+        {"name": "test_username_max_length", "status": "passed", "duration": 0.01}
+      ]
+    },
+    {
+      "id": 5, "priority": "P1", "file": "app/schemas.py", "unit_name": "UserLogin", "line": 20, "type": "class",
+      "tests": [
+        {"name": "test_valid_login", "status": "passed", "duration": 0.01},
+        {"name": "test_missing_fields_raises_error", "status": "passed", "duration": 0.01}
+      ]
+    },
+    {
+      "id": 6, "priority": "P1", "file": "app/schemas.py", "unit_name": "ChangePasswordRequest", "line": 26, "type": "class",
+      "tests": [
+        {"name": "test_valid_request", "status": "passed", "duration": 0.01},
+        {"name": "test_new_password_too_short", "status": "passed", "duration": 0.01}
+      ]
+    },
+    {
+      "id": 7, "priority": "P1", "file": "app/schemas.py", "unit_name": "ChatRequest", "line": 52, "type": "class",
+      "tests": [
+        {"name": "test_valid_request", "status": "passed", "duration": 0.01},
+        {"name": "test_empty_question", "status": "passed", "duration": 0.01},
+        {"name": "test_question_max_length", "status": "passed", "duration": 0.01},
+        {"name": "test_question_too_long", "status": "passed", "duration": 0.01}
+      ]
+    },
+    {
+      "id": 8, "priority": "P1", "file": "app/schemas.py", "unit_name": "SessionCreate", "line": 70, "type": "class",
+      "tests": [
+        {"name": "test_default_title", "status": "passed", "duration": 0.01},
+        {"name": "test_custom_title", "status": "passed", "duration": 0.01}
+      ]
+    }
+  ]
+}

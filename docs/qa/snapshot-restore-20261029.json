@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-29T12:36:31.275787+08:00",
+  "snapshot": "snapshots/20261029",
+  "result": "passed",
+  "counts": {
+    "users": 1,
+    "chat_sessions": 3,
+    "chat_messages": 16,
+    "knowledge_documents": 1
+  },
+  "conversation_rows_equal_original": true,
+  "document_rows_equal_original": true,
+  "original_password_hashes_removed": true,
+  "restored_admin_password_verified": true,
+  "refuses_existing_data": true,
+  "sqlite_integrity": "ok",
+  "archive_checksums": "passed",
+  "chroma_vectors_read": 2,
+  "vector_dimension": 1024,
+  "live_model_request_performed": false
+}

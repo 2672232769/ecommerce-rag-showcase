@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/2672232769/ecommerce-rag-showcase",
+  "visibility": "public",
+  "release_tag": "local-snapshot-20261029",
+  "snapshot": "snapshots/20261029",
+  "model_asset": {
+    "name": "bge-m3-onnx-int8.zip",
+    "size": 420555484,
+    "sha256": "c03fec1d1a17ffbce902a7cfde52e08fff150803002b259422fd7925255be005"
+  },
+  "model_provenance": "docs/embedding-model.json"
+}
